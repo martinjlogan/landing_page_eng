@@ -1,0 +1,31 @@
+<%= form_for(@landing_page, html: {multipart: true}) do |f| %>
+	<% if @landing_page.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@landing_page.errors.count, "error") %> prohibited this landing_page from being saved:</h2>
+
+			<ul>
+				<% @landing_page.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="field">
+		<%= f.label :title %><br />
+		<%= f.text_area :title %>
+	</div>
+	<div class="field">
+		<%= f.label :tagline %><br />
+		<%= f.text_area :tagline %>
+	</div>
+
+	<%= f.fields_for :slide_show_images do |builder| %>
+		<%= render "slide_show_image_fields", f: builder %>
+	<% end %>
+	<%= link_to_add_fields "Click to add slide show image", f, :slide_show_images %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>

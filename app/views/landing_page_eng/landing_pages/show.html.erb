@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<b>Title:</b>
+<%= @landing_page.title %>
+</p>
+
+<p>
+<b>Tagline:</b>
+<%= @landing_page.tagline %>
+</p>
+
+<p>
+<% @landing_page.slide_show_images.each do |image| %>
+	<%= image_tag image.image_url(:thumb).to_s %>
+<% end %> 
+</>
+
+<%= link_to 'Edit', edit_landing_page_path(@landing_page) %> |
+<%= link_to 'Back', landing_pages_path %>

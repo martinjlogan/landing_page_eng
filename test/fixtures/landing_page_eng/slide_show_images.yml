@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  landing_page_eng_landing_page_id: 1
+  image: MyString
+
+two:
+  landing_page_eng_landing_page_id: 1
+  image: MyString
