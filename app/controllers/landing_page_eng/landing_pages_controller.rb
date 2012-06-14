@@ -1,7 +1,7 @@
-require_dependency "landing_page_eng/application_controller"
+#require_dependency "landing_page_eng/application_controller"
 
 module LandingPageEng
-  class LandingPagesController < ApplicationController
+  class LandingPagesController < LandingPageTopController
     # GET /landing_pages
     # GET /landing_pages.json
     def index
