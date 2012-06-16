@@ -39,6 +39,9 @@ class LandingPageEngSlideShowImageUploader < CarrierWave::Uploader::Base
 	# version :thumb do
 	#   process :scale => [50, 50]
 	# end
+	version :medium do
+		process :resize_to_limit => [500, 500]
+	end
 	version :thumb do
 		process :resize_to_limit => [200, 200]
 	end
