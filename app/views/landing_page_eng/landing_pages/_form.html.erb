@@ -13,17 +13,17 @@
 
 	<div class="field">
 		<%= f.label :title %><br />
-		<%= f.text_area :title %>
+		<%= f.text_area :title, rows: 2 %>
 	</div>
 	<div class="field">
 		<%= f.label :tagline %><br />
-		<%= f.text_area :tagline %>
+		<%= f.text_area :tagline, rows: 4 %>
 	</div>
 
-	<%= f.fields_for :slide_show_images do |builder| %>
-		<%= render "slide_show_image_fields", f: builder %>
+	<%= f.fields_for :slide_show_slides do |builder| %>
+		<%= render "slide_show_slide_fields", f: builder %>
 	<% end %>
-	<%= link_to_add_fields "Click to add slide show image", f, :slide_show_images %>
+	<%= link_to_add_fields "Click to add slide show image and text", f, :slide_show_slides %>
 
 	<div class="actions">
 		<%= f.submit %>

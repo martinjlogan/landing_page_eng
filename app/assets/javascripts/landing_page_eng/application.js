@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require landing_pages.js
 //= require_tree .

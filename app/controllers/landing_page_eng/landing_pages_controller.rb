@@ -28,6 +28,7 @@ module LandingPageEng
     # GET /landing_pages/new
     # GET /landing_pages/new.json
     def new
+		logger.debug "******* paths loaded are #{Rails.application.config.assets.paths}"
       @landing_page = LandingPage.new
   
       respond_to do |format|
