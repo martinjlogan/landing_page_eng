@@ -1,19 +1,23 @@
+<% content_for :meta_description do %>
+	<meta name="description" content="<%= @landing_page.meta_description %>">
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
-<h1> <%= @landing_page.title %> </h1>
-
-<h2> <%= @landing_page.tagline %> </h2>
-
-
-		<div id="slide-show-slides" >
-			<% @landing_page.slide_show_slides.each do |slide| %>
-				<div class="slide-show-slide" style="background: url(<%= slide.image_url(:medium).to_s %>)">
-					<h2><%= slide.title %></h2>
-					<h3><%= slide.tagline %></h3>
-					<p><%= slide.body %></p>
-				</div>
-			<% end %>
+<div id="slide-show-slides" >
+	<% @landing_page.slide_show_slides.each do |slide| %>
+		<div class="slide-show-slide" style="background: url(<%= slide.image_url.to_s %>) no-repeat">
+			<div class="slide-copy">
+				<h2><%= slide.title %></h2>
+				<h3><%= slide.tagline %></h3>
+				<p><%= slide.body %></p>
+				<a href="<%= slide.call_to_action_url %>" class="button_yellow">Find out more</a>
+			</div>
 		</div>
+	<% end %>
+</div>
 
-<%= link_to 'Edit', edit_landing_page_path(@landing_page) %> |
-<%= link_to 'Back', landing_pages_path %>
+<% if not @landing_page.title.blank? %><h1> <%= @landing_page.title %> </h1><% end %>
+<% if not @landing_page.tagline.blank? %><h2> <%= @landing_page.tagline %> </h2><% end %>
+
+<%= link_to 'Edit', edit_landing_page_path(@landing_page) if current_user %> 

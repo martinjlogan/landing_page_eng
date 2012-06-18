@@ -9,14 +9,14 @@ $(document).ready(function () {
     $('#slide-show-slides').before('<ul id="pager"></ul>').cycle({
         //Specify options
         fx:     'scrollLeft', //Name of transition effect
-        timeout: 1,           //Disable auto advance
-        pager:  '#pager',     //Selector for element to use as pager container
-        pagerAnchorBuilder: function (index) {               //Build the pager
-        return '<li><a href="#">' + titles[index] + '</a></li>';
-    },
-    updateActivePagerLink: function(pager, currSlideIndex) {
-        $(pager).find('li').removeClass('active').filter('li:eq('+currSlideIndex+')').addClass('active');
-    }
+        timeout: 10000,           //Disable auto advance
+        //pager:  '#pager',     //Selector for element to use as pager container
+        //pagerAnchorBuilder: function (index) {               //Build the pager
+       // return '<li><a href="#">' + titles[index] + '</a></li>';
+    //},
+    //updateActivePagerLink: function(pager, currSlideIndex) {
+    //    $(pager).find('li').removeClass('active').filter('li:eq('+currSlideIndex+')').addClass('active');
+   // }
     });
 });
 

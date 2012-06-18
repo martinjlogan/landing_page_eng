@@ -2,3 +2,10 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.slide-show-slide {
+  height: 374px;
+  width: 940px;
+  color:white;
+}
+
+
