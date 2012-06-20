@@ -12,6 +12,10 @@
 	<% end %>
 
 	<div class="field">
+		<%= f.label :meta_description %><br />
+		<%= f.text_area :meta_description, rows: 2 %>
+	</div>
+	<div class="field">
 		<%= f.label :title %><br />
 		<%= f.text_area :title, rows: 2 %>
 	</div>
@@ -24,6 +28,11 @@
 		<%= render "slide_show_slide_fields", f: builder %>
 	<% end %>
 	<%= link_to_add_fields "Click to add slide show image and text", f, :slide_show_slides %>
+
+	<%= f.fields_for :highlights do |builder| %>
+		<%= render "highlight_fields", f: builder %>
+	<% end %>
+	<%= link_to_add_fields "Click to add a highlight", f, :highlights %>
 
 	<div class="actions">
 		<%= f.submit %>
