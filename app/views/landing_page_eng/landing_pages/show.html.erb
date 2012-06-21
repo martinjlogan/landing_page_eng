@@ -4,20 +4,45 @@
 
 <p id="notice"><%= notice %></p>
 
+<% unless @landing_page.slide_show_slides.nil? %>
 <div id="slide-show-slides" >
 	<% @landing_page.slide_show_slides.each do |slide| %>
 		<div class="slide-show-slide" style="background: url(<%= slide.image_url.to_s %>) no-repeat">
-			<div class="slide-copy">
-				<h2><%= slide.title %></h2>
-				<h3><%= slide.tagline %></h3>
-				<p><%= slide.body %></p>
-				<a href="<%= slide.call_to_action_url %>" class="button_yellow">Find out more</a>
-			</div>
+			<% if not slide.title.blank? %>
+				<div class="slide-copy">
+					<h2><%= slide.title %></h2>
+					<h3><%= slide.tagline %></h3>
+					<p><%= slide.body %></p>
+					<a href="<%= slide.call_to_action_url %>" class="button_yellow">Find out more</a>
+				</div>
+			<% end %>
 		</div>
 	<% end %>
 </div>
+<% end %>
 
-<% if not @landing_page.title.blank? %><h1> <%= @landing_page.title %> </h1><% end %>
-<% if not @landing_page.tagline.blank? %><h2> <%= @landing_page.tagline %> </h2><% end %>
+
+<% unless @landing_page.highlights.nil? %>
+<div id="highlights">
+	<% @landing_page.highlights.each_with_index do |highlight, index| %>
+		<% if index == 0 %>
+			<div class="highlight four columns alpha">
+		<% elsif index == (@landing_page.highlights.length - 1) %>
+			<div class="highlight four columns omega">
+		<% else %>
+			<div class="highlight four columns">
+		<% end %>
+			<%= image_tag highlight.icon_image_url %>
+			<h2><%= highlight.title %></h2>
+			<p><%= highlight.body %></p>
+		</div>
+	<% end %>
+</div>
+<% end %>
+
+<div class="title_and_tagline">
+	<% unless @landing_page.title.blank? %><h1> <%= @landing_page.title %> </h1><% end %>
+	<% unless @landing_page.tagline.blank? %><h2> <%= @landing_page.tagline %> </h2><% end %>
+</div>
 
 <%= link_to 'Edit', edit_landing_page_path(@landing_page) if current_user %> 
