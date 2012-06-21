@@ -21,6 +21,8 @@
 </div>
 <% end %>
 
+<div class="bg_gray add-bottom_3">
+  <section class="container">
 
 <% unless @landing_page.highlights.nil? %>
 <div id="highlights">
@@ -40,9 +42,14 @@
 </div>
 <% end %>
 
+</section>
+</div>
+
 <div class="title_and_tagline">
 	<% unless @landing_page.title.blank? %><h1> <%= @landing_page.title %> </h1><% end %>
 	<% unless @landing_page.tagline.blank? %><h2> <%= @landing_page.tagline %> </h2><% end %>
 </div>
+
+<% unless @landing_page.body.blank? %><%= @landing_page.body %><% end %>
 
 <%= link_to 'Edit', edit_landing_page_path(@landing_page) if current_user %> 

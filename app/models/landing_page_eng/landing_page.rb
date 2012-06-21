@@ -1,6 +1,6 @@
 module LandingPageEng
 	class LandingPage < ActiveRecord::Base
-		attr_accessible :meta_description, :title, :tagline, :slide_show_slides_attributes, 
+		attr_accessible :meta_description, :title, :tagline, :body, :slide_show_slides_attributes, 
 			:highlights_attributes, :call_to_action_url
 		has_many :slide_show_slides, :dependent => :destroy, :class_name => "LandingPageEng::SlideShowSlide"
 		has_many :highlights, :dependent => :destroy, :class_name => "LandingPageEng::Highlight"
