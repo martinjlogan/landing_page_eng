@@ -6,6 +6,7 @@ class CreateLandingPageEngLandingPages < ActiveRecord::Migration
 			t.text :tagline
 			t.text :body
 			t.string :call_to_action_url
+			t.string :slug
 
 			t.timestamps
 		end
