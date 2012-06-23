@@ -1,0 +1,22 @@
+<div class="container picture-link-texts">
+	<% f.each_with_index do |plt, index| %>
+		<% if index % 2 == 0 %>
+			<div class="picture-link-text eight columns alpha">
+		<% else %>
+			<div class="picture-link-text eight columns omega">
+		<% end %>
+		
+			<% unless plt.image.blank? %>
+				<div class="picture four columns alpha">
+					<a href="<%= plt.link %>"><%= image_tag plt.image_url, class: 'scale-with-grid' %></a><em></em>
+				</div>
+			<% end %>
+	
+			<div class="body four columns omega">
+				<% unless plt.title.blank? %><h2><%= plt.title %></h2><% end %>
+				<%= plt.body %>
+				<% unless plt.link.blank? %><%= link_to "read more", plt.link %><% end %>
+			</div>
+		</div>
+	<% end %>
+</div>

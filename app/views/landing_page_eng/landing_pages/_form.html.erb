@@ -38,6 +38,11 @@
 	<% end %>
 	<%= link_to_add_fields "Click to add a highlight", f, :highlights %>
 
+	<%= f.fields_for :picture_link_texts do |builder| %>
+		<%= render "picture_link_text_fields", f: builder %>
+	<% end %>
+	<%= link_to_add_fields "Click to add a picture-link-text", f, :picture_link_texts %>
+
 	<div class="actions">
 		<%= f.submit %>
 	</div>

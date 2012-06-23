@@ -1,0 +1,23 @@
+<fieldset>
+	<legend>Picture Link Text:</legend>
+	<div class="field">
+		<%= f.label :title %><br />
+		<%= f.text_field :title, rows: 2 %>
+	</div>
+	<div class="field">
+		<%= f.label :body %><br />
+		<%= f.text_area :body, rows: 6 %>
+	</div>
+	<div class="field">
+		<%= f.label :link %><br />
+		<%= f.text_field :link, rows: 2 %>
+	</div>
+	<div class="field">
+		<%= f.label :image %><br />
+		<%= f.file_field :image %>
+	</div>
+
+	<%= f.hidden_field :_destroy %>
+	<%= link_to "remove", "#", class: "remove_fields" %>
+</fieldset>
+
