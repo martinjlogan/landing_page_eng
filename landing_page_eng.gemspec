@@ -7,11 +7,11 @@ require "landing_page_eng/version"
 Gem::Specification.new do |s|
   s.name        = "landing_page_eng"
   s.version     = LandingPageEng::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of LandingPageEng."
-  s.description = "TODO: Description of LandingPageEng."
+  s.authors     = ["Martin J. Logan"]
+  s.email       = ["martinjlogan@erlware.org"]
+  s.homepage    = "http://erlware.org"
+  s.summary     = "Summary of LandingPageEng."
+  s.description = "Description of LandingPageEng."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
