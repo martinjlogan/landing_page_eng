@@ -13,8 +13,17 @@ module LandingPageEng
 			end
 		end
 
+		def sitemap
+			@landing_pages = LandingPage.all
+
+			respond_to do |format|
+				format.html 
+				format.xml  
+			end
+		end
+
 		def route
-			@landing_page = LandingPage.find(params[:slug])
+			@landing_page = LandingPage.find_by_slug(params[:slug])
 
 			render :show
 		end
