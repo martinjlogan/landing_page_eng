@@ -12,5 +12,6 @@ module LandingPageEng
 		accepts_nested_attributes_for :picture_link_texts, allow_destroy: true
 
 		validates :meta_description, presence: true
+
 	end
 end

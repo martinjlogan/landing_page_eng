@@ -1,5 +1,5 @@
 <div class="container picture-link-texts">
-	<% f.each_with_index do |plt, index| %>
+	<% plts.find_all{|plt| plt.tags.include?(tag) }.each_with_index do |plt, index| %>
 		<% if index % 2 == 0 %>
 			<div class="picture-link-text eight columns alpha">
 		<% else %>

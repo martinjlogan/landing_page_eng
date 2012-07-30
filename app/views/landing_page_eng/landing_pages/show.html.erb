@@ -27,8 +27,10 @@
 </div>
 
 <div class="bg_gray add-bottom_3">
-	<% unless @landing_page.highlights.nil? %>
-		<%= render 'highlights', f: @landing_page.highlights %>
+	<% unless @landing_pages.picture_link_texts.nil? %>
+	<div class="highlights">
+		<%= render partial: 'picture_link_texts', locals: {plts: @landing_pages.picture_link_texts, tag: "highlight"} %>
+	</div>
 	<% end %>
 </div>
 
@@ -40,7 +42,7 @@
 
 <div class="bg_gray add-bottom_3">
 	<% unless @landing_page.picture_link_texts.nil? %>
-		<%= render 'picture_link_texts', f: @landing_page.picture_link_texts %>
+		<%= render partial: 'picture_link_texts', locals: {plts: @landing_pages.picture_link_texts, tag: "plt"} %>
 	<% end %>
 </div>
 

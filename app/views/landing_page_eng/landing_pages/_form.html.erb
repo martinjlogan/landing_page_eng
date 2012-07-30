@@ -37,11 +37,6 @@
 	<% end %>
 	<%= link_to_add_fields "Click to add slide show image and text", f, :slide_show_slides %>
 
-	<%= f.fields_for :highlights do |builder| %>
-		<%= render "highlight_fields", f: builder %>
-	<% end %>
-	<%= link_to_add_fields "Click to add a highlight", f, :highlights %>
-
 	<%= f.fields_for :picture_link_texts do |builder| %>
 		<%= render "picture_link_text_fields", f: builder %>
 	<% end %>

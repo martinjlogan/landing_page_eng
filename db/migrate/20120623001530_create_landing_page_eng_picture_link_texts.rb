@@ -5,6 +5,7 @@ class CreateLandingPageEngPictureLinkTexts < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.string :link
+      t.text :tags
       t.integer :landing_page_id
 
       t.timestamps

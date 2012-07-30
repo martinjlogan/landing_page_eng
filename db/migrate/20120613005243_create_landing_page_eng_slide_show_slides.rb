@@ -4,9 +4,9 @@ class CreateLandingPageEngSlideShowSlides < ActiveRecord::Migration
       t.integer :landing_page_id
       t.string :image
       t.string :title
-	  t.text :tagline
-	  t.text :body
-	  t.string :call_to_action_url
+      t.text :tagline
+      t.text :body
+      t.string :call_to_action_url
 
       t.timestamps
     end
