@@ -1,3 +1,5 @@
+require 'redcarpet'
+
 module LandingPageEng
 	class LandingPage < ActiveRecord::Base
 		attr_accessible :slug, :meta_description, :title, :tagline, :body, :slide_show_slides_attributes, 
@@ -13,5 +15,9 @@ module LandingPageEng
 
 		validates :meta_description, presence: true
 
+		def body
+			markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+			markdown.render(read_attribute(:body)).html_safe
+		end
 	end
 end
