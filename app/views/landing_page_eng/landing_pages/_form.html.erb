@@ -16,16 +16,16 @@
 		<%= f.text_field :slug %>
 	</div>
 	<div class="field">
+		<%= f.label :meta_keywords %><br />
+		<%= f.text_area :meta_keywords, rows: 2 %>
+	</div>
+	<div class="field">
 		<%= f.label :meta_description %><br />
 		<%= f.text_area :meta_description, rows: 2 %>
 	</div>
 	<div class="field">
 		<%= f.label :title %><br />
 		<%= f.text_area :title, rows: 2 %>
-	</div>
-	<div class="field">
-		<%= f.label :tagline %><br />
-		<%= f.text_area :tagline, rows: 4 %>
 	</div>
 	<div class="field">
 		<%= f.label :body %><br />
