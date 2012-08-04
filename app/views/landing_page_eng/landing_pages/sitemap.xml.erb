@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <% @landing_pages.each do | lp | %>
+    <url>
+      <loc>http://www.chitowncornhole.com/lp/<%= lp.slug %></loc>
+      <changefreq>weekly</changefreq>
+    </url>
+  <% end %>
+
+</urlset>
+
+

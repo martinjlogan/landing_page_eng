@@ -1,29 +1,14 @@
 <% content_for :meta_description do %>
-	<meta name="description" content="<%= @landing_page.meta_description %>">
+<meta name="description" content="<%= @landing_page.meta_description %>">
 <% end %>
 
 
 <div class="container">
 	<div class="sixteen columns">
-	<p id="notice"><%= notice %></p>
+		<p id="notice"><%= notice %></p>
 
-	<% unless @landing_page.slide_show_slides.nil? %>
-		<div id="slide-show-slides" >
-			<% @landing_page.slide_show_slides.each do |slide| %>
-				<div class="slide-show-slide" style="background: url(<%= slide.image_url.to_s %>) no-repeat">
-					<% if not slide.title.blank? %>
-						<div class="slide-copy">
-							<h2><%= slide.title %></h2>
-							<h3><%= slide.tagline %></h3>
-							<p><%= slide.body %></p>
-							<a href="<%= slide.call_to_action_url %>" class="button_yellow">Find out more</a>
-						</div>
-					<% end %>
-				</div>
-			<% end %>
-		</div>
-	<% end %>
-</div>
+		<%= render partial: "slide_show_slides", locals: {landing_pages: @landing_pages} %>
+	</div>
 </div>
 
 <div class="bg_gray add-bottom_3">
@@ -35,14 +20,12 @@
 </div>
 
 <section class="title-and-tagline container">
-<% unless @landing_page.title.blank? %><h1> <%= @landing_page.title %> </h1><% end %>
-<% unless @landing_page.tagline.blank? %><h2> <%= @landing_page.tagline %> </h2><% end %>
-<% unless @landing_page.body.blank? %><%= @landing_page.body %><% end %>
+	<% unless @landing_page.body.blank? %><%= @landing_page.body %><% end %>
 </section>
 
 <div class="bg_gray add-bottom_3">
 	<% unless @landing_page.picture_link_texts.nil? %>
-		<%= render partial: 'picture_link_texts', locals: {plts: @landing_pages.picture_link_texts, tag: "plt"} %>
+	<%= render partial: 'picture_link_texts', locals: {plts: @landing_pages.picture_link_texts, tag: "plt"} %>
 	<% end %>
 </div>
 

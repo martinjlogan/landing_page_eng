@@ -1,0 +1,18 @@
+<% unless landing_page.slide_show_slides.nil? %>
+		<div id="slide-show-slides" >
+			<% landing_page.slide_show_slides.each do |slide| %>
+				<div class="slide-show-slide" style="background: url(<%= slide.image_url.to_s %>) no-repeat">
+					<% unless slide.body.blank? %>
+						<div class="slide-copy">
+							<% unless slide.title.blank? %><h2><%= slide.title %></h2><% end %>
+							<% unless slide.tagline.blank? %><h3><%= slide.tagline %></h3><% end %>
+							<p><%= slide.body %></p>
+							<% unless slide.call_to_action_url.blank? %>
+								<a href="<%= slide.call_to_action_url %>" class="button_yellow">Find out more</a>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
