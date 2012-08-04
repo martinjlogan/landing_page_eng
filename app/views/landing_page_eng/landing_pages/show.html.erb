@@ -7,14 +7,14 @@
 	<div class="sixteen columns">
 		<p id="notice"><%= notice %></p>
 
-		<%= render partial: "slide_show_slides", locals: {landing_pages: @landing_pages} %>
+		<%= render partial: "slide_show_slides", locals: {landing_page: @landing_page} %>
 	</div>
 </div>
 
 <div class="bg_gray add-bottom_3">
-	<% unless @landing_pages.picture_link_texts.nil? %>
+	<% unless @landing_page.picture_link_texts.nil? %>
 	<div class="highlights">
-		<%= render partial: 'picture_link_texts', locals: {plts: @landing_pages.picture_link_texts, tag: "highlight"} %>
+		<%= render partial: 'picture_link_texts', locals: {plts: @landing_page.picture_link_texts, tag: "highlight"} %>
 	</div>
 	<% end %>
 </div>
@@ -25,8 +25,8 @@
 
 <div class="bg_gray add-bottom_3">
 	<% unless @landing_page.picture_link_texts.nil? %>
-	<%= render partial: 'picture_link_texts', locals: {plts: @landing_pages.picture_link_texts, tag: "plt"} %>
+	<%= render partial: 'picture_link_texts', locals: {plts: @landing_page.picture_link_texts, tag: "plt"} %>
 	<% end %>
 </div>
 
-<%= link_to 'Edit', edit_landing_page_path(@landing_page) if current_user.is_writer? %> 
+<%= link_to 'Edit', edit_landing_page_path(@landing_page) if (not current_user.nil) && current_user.is_writer? %>
