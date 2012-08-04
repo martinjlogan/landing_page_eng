@@ -29,4 +29,4 @@
 	<% end %>
 </div>
 
-<%= link_to 'Edit', edit_landing_page_path(@landing_page) if (not current_user.nil) && current_user.is_writer? %>
+<%= link_to 'Edit', edit_landing_page_path(@landing_page) if (not current_user.nil?) && current_user.is_writer? %>
