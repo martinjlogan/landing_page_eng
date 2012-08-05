@@ -1,3 +1,5 @@
+<ul>
   <% landing_pages.each do | lp | %>
-  <a href="/lp/<%= lp.slug %>">lp.title</a>
+  <li><a href="/lp/<%= lp.slug %>"><%= lp.title %></a></li>
   <% end %>
+</ul>
