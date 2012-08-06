@@ -3,7 +3,7 @@ require 'redcarpet'
 module LandingPageEng
 	class LandingPage < ActiveRecord::Base
 		attr_accessible :slug, :meta_description, :title, :meta_keywords, :body, :slide_show_slides_attributes, 
-						:picture_link_texts_attributes, :call_to_action_url
+						:picture_link_texts_attributes, :call_to_action_url, :template
 
 		has_many :slide_show_slides, :dependent => :destroy, :class_name => "LandingPageEng::SlideShowSlide"
 		has_many :picture_link_texts, :dependent => :destroy, :class_name => "LandingPageEng::PictureLinkText"

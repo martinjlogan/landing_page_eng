@@ -34,7 +34,7 @@ module LandingPageEng
 			@landing_page = LandingPage.find(params[:id])
 
 			respond_to do |format|
-				format.html # show.html.erb
+				format.html { render render_template(@landing_page) } # show.html.erb
 				format.json { render json: @landing_page }
 			end
 		end
@@ -97,6 +97,16 @@ module LandingPageEng
 			respond_to do |format|
 				format.html { redirect_to landing_pages_url }
 				format.json { head :no_content }
+			end
+		end
+
+		private
+
+		def render_template(landing_page)
+			if landing_page.template.blank?
+				"show"
+			else
+				landing_page.template
 			end
 		end
 	end
