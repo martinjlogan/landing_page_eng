@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    landing_page_eng (0.0.7)
+    landing_page_eng (0.0.8)
       carrierwave
       rails (~> 3.2.5)
       rmagick
