@@ -4,7 +4,7 @@ module LandingPageEng
     attr_accessible :body, :image, :zoom_image, :landing_page_id, :link, :title, :tags
 
 	mount_uploader :image, LandingPageEngPictureLinkTextImageUploader 
-	mount_uploader :image, LandingPageEngPictureLinkTextZoomImageUploader 
+	mount_uploader :zoom_image, LandingPageEngPictureLinkTextZoomImageUploader 
 
 	def body
 		markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
