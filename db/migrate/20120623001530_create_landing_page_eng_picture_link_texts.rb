@@ -3,6 +3,7 @@ class CreateLandingPageEngPictureLinkTexts < ActiveRecord::Migration
     create_table :landing_page_eng_picture_link_texts do |t|
       t.string :image
       t.string :title
+      t.string :zoom_image
       t.text :body
       t.string :link
       t.text :tags
