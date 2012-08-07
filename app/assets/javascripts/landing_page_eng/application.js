@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require .
-//= require_tree .
+//= require landing_page_eng/jquery.cycle.all
+//= require landing_page_eng/landing_pages
