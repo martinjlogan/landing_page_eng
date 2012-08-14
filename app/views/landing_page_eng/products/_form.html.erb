@@ -12,9 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.number_field :category_id %>
+    <%= label :product, :category_id %><br />
+    <%= select :product, :category_id, @display_categories %>
   </div>
+  <br/>
+  <br/>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

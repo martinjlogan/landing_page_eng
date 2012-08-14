@@ -25,6 +25,9 @@
   <%= @product.details %>
 </p>
 
+  <% unless @product.picture_link_texts.nil? %>
+  <%= render partial: 'landing_page_eng/landing_pages/picture_link_texts', locals: {plts: @product.picture_link_texts, tag: ""} %>
+  <% end %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
