@@ -17,6 +17,8 @@ module LandingPageEng
     # GET /products/1.json
     def show
       @product = Product.find(params[:id])
+      # TODO limit the number of results to someting reasonable
+      @recommended_products = Product.all 
   
       respond_to do |format|
         format.html # show.html.erb
@@ -39,6 +41,7 @@ module LandingPageEng
     # GET /products/1/edit
     def edit
       @product = Product.find(params[:id])
+      @display_categories = Category.all.collect { | c | [c.category, c.id] }
     end
   
     # POST /products

@@ -1,13 +1,16 @@
 module LandingPageEng
 	class Product < ActiveRecord::Base
-		attr_accessible :brand, :category_id, :description, :details, :name, :picture_link_texts_attributes, :prices_attributes
+		attr_accessible :brand, :category_id, :description, :details, :name, :picture_link_texts_attributes, 
+			:prices_attributes, :target_affiliates_attributes
 
 		has_many :prices
 		has_many :picture_link_texts
+		has_many :target_affiliates
 		belongs_to :categories
 
 		accepts_nested_attributes_for :picture_link_texts, allow_destroy: true
 		accepts_nested_attributes_for :prices, allow_destroy: true
+		accepts_nested_attributes_for :target_affiliates, allow_destroy: true
 
 		validates :name,  presence: true, length: { maximum: 50 }
 		validates :description, presence: true

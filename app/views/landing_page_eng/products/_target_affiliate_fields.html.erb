@@ -1,0 +1,19 @@
+<fieldset>
+	<legend>Target Affiliate:</legend>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :url %><br />
+		<%= f.text_field :url %>
+	</div>
+	<div class="field">
+		<%= f.label :price %><br />
+		<%= f.text_field :price %>
+	</div>
+
+	<%= f.hidden_field :_destroy %>
+	<%= link_to "remove", "#", class: "remove_fields" %>
+</fieldset>
+

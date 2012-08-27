@@ -41,6 +41,13 @@
   <%= link_to_add_fields "Click to add a picture-link-text", f, :picture_link_texts, "landing_page_eng/landing_pages/picture_link_text_fields" %>
   </div>
 
+  <div class="field">
+  <%= f.fields_for :target_affiliates do |builder| %>
+    <%= render "target_affiliate_fields", f: builder %>
+  <% end %>
+  <%= link_to_add_fields "Click to add a target-affiliate", f, :target_affiliates %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

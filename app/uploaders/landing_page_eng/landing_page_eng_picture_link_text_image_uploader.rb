@@ -1,6 +1,5 @@
-# encoding: utf-8
-
-class LandingPageEngPictureLinkTextZoomImageUploader < CarrierWave::Uploader::Base
+module LandingPageEng
+  class LandingPageEngPictureLinkTextImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -30,6 +29,14 @@ class LandingPageEngPictureLinkTextZoomImageUploader < CarrierWave::Uploader::Ba
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
+  version :size_220x147 do
+    process :resize_to_limit => [220, 147]
+  end
+
+  version :size_85x85 do
+    process :resize_to_limit => [85, 85]
+  end
+
   #
   # def scale(width, height)
   #   # do something
@@ -52,4 +59,5 @@ class LandingPageEngPictureLinkTextZoomImageUploader < CarrierWave::Uploader::Ba
   #   "something.jpg" if original_filename
   # end
 
+end
 end

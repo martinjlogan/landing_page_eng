@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+module LandingPageEng
 class LandingPageEngSlideShowImageUploader < CarrierWave::Uploader::Base
 
 	# Include RMagick or MiniMagick support:
@@ -56,4 +56,5 @@ class LandingPageEngSlideShowImageUploader < CarrierWave::Uploader::Base
 	#   "something.jpg" if original_filename
 	# end
 
+end
 end
