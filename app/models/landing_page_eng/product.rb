@@ -15,6 +15,12 @@ module LandingPageEng
 		validates :name,  presence: true, length: { maximum: 50 }
 		validates :description, presence: true
 
+		# Return the lowest known price for a given product.
+		def price
+			target_affiliates = self.target_affiliates
+			target_affiliates[0].price
+		end
+
 		def description
 			markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
 			markdown.render(read_attribute(:description)).html_safe
