@@ -39,6 +39,16 @@ module LandingPageEng
 			end
 		end
 
+		def show_home
+			@landing_page = LandingPage.where("slug = \'home-page\'").first
+			@new_products = Product.order("updated_at DESC").limit(7)
+
+			respond_to do |format|
+				format.html { render render_template(@landing_page) } # show.html.erb
+				format.json { render json: @landing_page }
+			end
+		end
+		
 		# GET /landing_pages/new
 		# GET /landing_pages/new.json
 		def new
