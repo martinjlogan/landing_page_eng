@@ -1,6 +1,6 @@
 module LandingPageEng
 	class Product < ActiveRecord::Base
-		attr_accessible :brand, :category_id, :description, :details, :name, :picture_link_texts_attributes, 
+		attr_accessible :brand, :categories, :tags, :description, :details, :name, :picture_link_texts_attributes, 
 			:prices_attributes, :target_affiliates_attributes
 
 		has_many :prices

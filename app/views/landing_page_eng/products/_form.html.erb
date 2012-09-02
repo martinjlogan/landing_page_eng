@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= label :product, :category_id %><br />
-    <%= select :product, :category_id, @display_categories %>
+    <%= f.label :categories %><br />
+    <%= f.select :categories, @display_categories %>
   </div>
   <br/>
   <br/>

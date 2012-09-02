@@ -30,7 +30,7 @@ module LandingPageEng
     # GET /products/new.json
     def new
       @product = Product.new
-      @display_categories = Category.all.collect { | c | [c.category, c.id] }
+      @display_categories = []
       
       respond_to do |format|
         format.html # new.html.erb
@@ -41,7 +41,7 @@ module LandingPageEng
     # GET /products/1/edit
     def edit
       @product = Product.find(params[:id])
-      @display_categories = Category.all.collect { | c | [c.category, c.id] }
+      @display_categories = []
     end
   
     # POST /products

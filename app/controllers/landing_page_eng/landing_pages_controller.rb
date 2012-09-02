@@ -2,6 +2,7 @@
 
 module LandingPageEng
 	class LandingPagesController < LandingPageEng::ApplicationController
+		include LandingPagesControllerMixin
 		# GET /landing_pages
 		# GET /landing_pages.json
 		def index
@@ -33,6 +34,9 @@ module LandingPageEng
 		def show
 			@landing_page = LandingPage.find(params[:id])
 
+			# adds instance variables 
+			add_vars_based_on_template_for_show_action(@landing_page.template)
+
 			respond_to do |format|
 				format.html { render render_template(@landing_page) } # show.html.erb
 				format.json { render json: @landing_page }
@@ -41,7 +45,7 @@ module LandingPageEng
 
 		def show_home
 			@landing_page = LandingPage.where("slug = \'home-page\'").first
-			@new_products = Product.order("updated_at DESC").limit(7)
+			add_vars_based_on_template_for_show_action(@landing_page.template)
 
 			respond_to do |format|
 				format.html { render render_template(@landing_page) } # show.html.erb
