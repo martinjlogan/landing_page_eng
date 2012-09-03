@@ -19,7 +19,7 @@ module LandingPageEng
       @product = Product.find(params[:id])
       # TODO limit the number of results to someting reasonable
       @recommended_products = Product.where("id != ?", @product.id) 
-  
+
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @product }
@@ -28,12 +28,13 @@ module LandingPageEng
 
     def route
       @product = Product.find_by_slug(params[:slug])
+      @recommended_products = Product.where("id != ?", @product.id) 
 
       render :show
     end
 
     def sitemap
-      @landing_pages = Product.all
+      @products = Product.all
 
       respond_to do |format|
         format.html 

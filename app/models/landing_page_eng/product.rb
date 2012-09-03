@@ -1,7 +1,9 @@
+require 'redcarpet'
+
 module LandingPageEng
 	class Product < ActiveRecord::Base
-		attr_accessible :slug, :brand, :categories, :tags, :description, :details, :name, :picture_link_texts_attributes, 
-			:prices_attributes, :target_affiliates_attributes
+		attr_accessible :categories, :tags, :description, :details, :name, :picture_link_texts_attributes, 
+			:prices_attributes, :target_affiliates_attributes, :slug, :brand
 
 		has_many :prices
 		has_many :picture_link_texts
