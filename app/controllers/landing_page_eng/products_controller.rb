@@ -25,6 +25,21 @@ module LandingPageEng
         format.json { render json: @product }
       end
     end
+
+    def route
+      @product = Product.find_by_slug(params[:slug])
+
+      render :show
+    end
+
+    def sitemap
+      @landing_pages = Product.all
+
+      respond_to do |format|
+        format.html 
+        format.xml  
+      end
+    end
   
     # GET /products/new
     # GET /products/new.json

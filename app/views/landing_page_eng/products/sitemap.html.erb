@@ -1,0 +1,6 @@
+<h1>Sitemap</h1>
+<ul>
+  <% @products.each do | product | %>
+  <li><a href="/lp/<%= product.slug %>"><%= product.title %></a></li>
+  <% end %>
+</ul>

@@ -1,6 +1,7 @@
 class CreateLandingPageEngProducts < ActiveRecord::Migration
   def change
     create_table :landing_page_eng_products do |t|
+      t.string :slug
       t.string :department
       t.text :categories
       t.text :tags
