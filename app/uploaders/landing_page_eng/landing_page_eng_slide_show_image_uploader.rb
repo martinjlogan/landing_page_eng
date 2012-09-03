@@ -40,9 +40,6 @@ class LandingPageEngSlideShowImageUploader < CarrierWave::Uploader::Base
 	# version :thumb do
 	#   process :scale => [50, 50]
 	# end
-	version :size_940x374 do
-  		process :resize_to_limit => [940, 374]
-	end
 
 	# Add a white list of extensions which are allowed to be uploaded.
 	# For images you might use something like this:
