@@ -45,7 +45,7 @@
   <%= f.fields_for :target_affiliates do |builder| %>
     <%= render "target_affiliate_fields", f: builder %>
   <% end %>
-  <%= link_to_add_fields "Click to add a target-affiliate", f, :target_affiliates %>
+  <%= link_to_add_fields "Click to add a target-affiliate", f, :target_affiliates, "landing_page_eng/products/target_affiliate_fields" %>
   </div>
 
   <div class="actions">

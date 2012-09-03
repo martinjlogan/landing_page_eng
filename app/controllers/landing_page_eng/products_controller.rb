@@ -18,7 +18,7 @@ module LandingPageEng
     def show
       @product = Product.find(params[:id])
       # TODO limit the number of results to someting reasonable
-      @recommended_products = Product.all 
+      @recommended_products = Product.where("id != ?", @product.id) 
   
       respond_to do |format|
         format.html # show.html.erb
