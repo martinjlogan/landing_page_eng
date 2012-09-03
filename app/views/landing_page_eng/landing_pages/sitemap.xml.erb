@@ -3,7 +3,7 @@
 
   <% @landing_pages.each do | lp | %>
     <url>
-      <loc>http://www.chitowncornhole.com/lp/<%= lp.slug %></loc>
+      <loc>http://<%= request.host_with_port %>/lp/<%= lp.slug %></loc>
       <changefreq>weekly</changefreq>
     </url>
   <% end %>
