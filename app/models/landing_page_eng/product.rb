@@ -15,10 +15,14 @@ module LandingPageEng
 		validates :name,  presence: true, length: { maximum: 50 }
 		validates :description, presence: true
 
-		# Return the lowest known price for a given product.
+		# Return the lowest known price for a given product or nil
 		def price
-			target_affiliates = self.target_affiliates
-			target_affiliates[0].price
+			begin
+				target_affiliates = self.target_affiliates
+				target_affiliates[0].price
+			rescue Exception => e
+				nil
+			end
 		end
 
 		def description
