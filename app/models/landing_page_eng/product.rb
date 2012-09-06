@@ -2,13 +2,34 @@ require 'redcarpet'
 
 module LandingPageEng
 	class Product < ActiveRecord::Base
+		CATEGORIES = ["Animals",
+		"Apparel & Accessories",
+		"Arts & Entertainment",
+		"Baby & Toddler",
+		"Business & Industrial",
+		"Cameras & Optics",
+		"Electronics",
+		"Food, Beverages & Tobacco",
+		"Furniture",
+		"Hardware",
+		"Health & Beauty",
+		"Home & Garden",
+		"Luggage & Bags",
+		"Mature",
+		"Media",
+		"Office Supplies",
+		"Religious & Ceremonial",
+		"Software",
+		"Sporting Goods",
+		"Toys & Games",
+		"Vehicles & Parts"]
+
 		attr_accessible :categories, :tags, :description, :details, :name, :picture_link_texts_attributes, 
-			:prices_attributes, :target_affiliates_attributes, :slug, :brand
+		:prices_attributes, :target_affiliates_attributes, :slug, :brand, :department
 
 		has_many :prices
 		has_many :picture_link_texts
 		has_many :target_affiliates
-		belongs_to :categories
 
 		accepts_nested_attributes_for :picture_link_texts, allow_destroy: true
 		accepts_nested_attributes_for :prices, allow_destroy: true

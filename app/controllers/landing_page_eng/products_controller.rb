@@ -46,7 +46,7 @@ module LandingPageEng
     # GET /products/new.json
     def new
       @product = Product.new
-      @display_categories = []
+      @categories = Product::CATEGORIES
       
       respond_to do |format|
         format.html # new.html.erb
@@ -57,7 +57,7 @@ module LandingPageEng
     # GET /products/1/edit
     def edit
       @product = Product.find(params[:id])
-      @display_categories = []
+      @categories = Product::CATEGORIES
     end
   
     # POST /products

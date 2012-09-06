@@ -12,14 +12,23 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :department %><br />
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
     <%= f.label :categories %><br />
-    <%= f.select :categories, @display_categories %>
+    <%= f.select :categories, @categories%>
   </div>
   <br/>
   <br/>
   <div class="field">
+    <%= f.label :tags %><br />
+    <%= f.text_field :tags %>
+  </div>
+  <div class="field">
     <%= f.label :slug %><br />
     <%= f.text_field :slug %>
+  </div>
   </div>
   <div class="field">
     <%= f.label :name %><br />
