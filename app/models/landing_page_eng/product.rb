@@ -57,5 +57,6 @@ module LandingPageEng
 			markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
 			markdown.render(read_attribute(:details)).html_safe
 		end	
+
 	end
 end

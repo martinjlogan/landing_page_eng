@@ -45,7 +45,7 @@ module LandingPageEng
 
 		def show_home
 			@landing_page = LandingPage.where("slug = \'home-page\'").first
-			add_vars_based_on_template_for_show_action(@landing_page.template)
+			add_vars_based_on_template_for_show_action(@landing_page.template, params)
 
 			respond_to do |format|
 				format.html { render render_template(@landing_page) } # show.html.erb
