@@ -19,7 +19,6 @@ $(function() {
 
 
 // slideshow.js
-
 $(function() {
  //create an array of titles
  var titles = $('#slide-show-slides div.slide-show-slide').find("h2").map(function() { return $(this).text(); });
@@ -38,4 +37,5 @@ $(function() {
    // }
     });
 });
+
 
