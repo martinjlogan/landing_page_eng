@@ -48,7 +48,7 @@ module LandingPageEng
 			add_vars_based_on_template_for_show_action(@landing_page.template, params)
 
 			respond_to do |format|
-				format.html { render render_template(@landing_page) } # show.html.erb
+				format.html { render render_template(@landing_page)} # show.html.erb,
 				format.json { render json: @landing_page }
 			end
 		end
