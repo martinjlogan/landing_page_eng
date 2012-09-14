@@ -10,10 +10,12 @@
     </url>
 
   <% @landing_pages.each do | lp | %>
+  	<% unless lp.slug == 'home-page' %>
     <url>
       <loc>http://<%= request.host_with_port %>/lp/<%= lp.slug %></loc>
       <changefreq>weekly</changefreq>
     </url>
+    <% end %>
   <% end %>
 
 </urlset>
